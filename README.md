@@ -29,6 +29,8 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+> I am designing a content-based recommendation system that recommends songs by comparing a user’s taste profile to the features of each song. Each song is described using genre, mood, energy, and acousticness, while the user profile stores their preferred genre, mood, target energy level, and acoustic preference. The recommender computes a weighted score for each song based on how closely it matches the user’s preferences and recommends the songs with the highest scores. This makes the system simple, interpretable, and easy to explain.
+
 ---
 
 ## Getting Started
@@ -36,11 +38,12 @@ You can include a simple diagram or bullet list if helpful.
 ### Setup
 
 1. Create a virtual environment (optional but recommended):
-
+   
    ```bash
    python -m venv .venv
    source .venv/bin/activate      # Mac or Linux
    .venv\Scripts\activate         # Windows
+   ```
 
 2. Install dependencies
 
@@ -71,15 +74,52 @@ You can add more tests in `tests/test_recommender.py`.
 Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
 
 ```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
+User profile: genre=pop, mood=happy, energy=high
+Top recommendations:
+
+Title : Sunrise City
+Score : 0.97
+Reasons:
+  - genre matches pop
+  - mood matches happy
+  - energy is close to the target
+  - acousticness is low at 0.18
+----------------------------------------
+Title : Gym Hero
+Score : 0.71
+Reasons:
+  - genre matches pop
+  - mood differs from happy
+  - energy is close to the target
+  - acousticness is low at 0.05
+----------------------------------------
+Title : Rooftop Lights
+Score : 0.59
+Reasons:
+  - genre differs from pop
+  - mood matches happy
+  - energy is close to the target
+  - acousticness is low at 0.35
+----------------------------------------
+Title : Neon Skyline
+Score : 0.37
+Reasons:
+  - genre differs from pop
+  - mood differs from happy
+  - energy is close to the target
+  - acousticness is low at 0.11
+----------------------------------------
+Title : City of Fire
+Score : 0.37
+Reasons:
+  - genre differs from pop
+  - mood differs from happy
+  - energy is close to the target
+  - acousticness is low at 0.08
+----------------------------------------
 ```
 
-**Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
+**Screenshot or video** _(optional)_: <!-- Insert a screenshot or demo video link here -->
 
 ---
 
@@ -117,6 +157,3 @@ Write 1 to 2 paragraphs here about what you learned:
 
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
-
-
-
